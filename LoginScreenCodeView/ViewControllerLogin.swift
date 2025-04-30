@@ -222,6 +222,7 @@ class ViewControllerLogin: UIViewController {
         )
     }
     
+    //para o teclado sair da tela quando clicado
     @objc func dismissKeyboard(){
         view.endEditing(true)
     }
