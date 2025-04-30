@@ -200,6 +200,10 @@ class ViewControllerLogin: UIViewController {
     
     override func viewDidLoad() {
         
+        //reconhce o toque pra desligar o teclado
+        let tapDissmisKeyboard: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))//pega o taregt e o action, q vai ser uma func objc
+        view.addGestureRecognizer(tapDissmisKeyboard)
+        
         super.viewDidLoad()
         
         addSubViews()
@@ -216,6 +220,10 @@ class ViewControllerLogin: UIViewController {
             colorOne: UIColor(red: 0/255, green: 66/255, blue: 132/255, alpha: 1.0),
             colorTwo: UIColor(red: 79/255, green: 188/255, blue: 255/255, alpha: 1.0)
         )
+    }
+    
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
     }
     
     func addConstraints(){
