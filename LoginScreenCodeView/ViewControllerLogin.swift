@@ -76,79 +76,109 @@ class ViewControllerLogin: UIViewController {
         return label
     }()
     
-    //MARK: Label email
-    lazy var labelEmail: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Email"
-        label.textAlignment = .left
-        label.textColor = .white
-        label.font = UIFont(name: "SFPro", size: 16)
+//    //MARK: Label email
+//    lazy var labelEmail: UILabel = {
+//        let label = UILabel()
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.text = "Email"
+//        label.textAlignment = .left
+//        label.textColor = .white
+//        label.font = UIFont(name: "SFPro", size: 16)
+//        
+//        return label
+//    }()
+//    
+//    
+//    //MARK: textfield email
+//    lazy var textFieldEmail: UITextField = {
+//        let textField = UITextField()
+//        textField.translatesAutoresizingMaskIntoConstraints = false
+//        textField.backgroundColor = UIColor(red: 56/255.0, green: 56/255.0, blue: 58/255.0, alpha: 1.0)
+//        textField.textColor = UIColor(red: 235/255.0,green: 235/255.0,blue: 245/255.0,alpha: 77/255.0)
+//        textField.layer.cornerRadius = 8
+//        textField.heightAnchor.constraint(equalToConstant: 46).isActive = true
+//        textField.attributedPlaceholder = NSAttributedString(string: "abc@abc.com", attributes: [
+//            .foregroundColor: UIColor(red: 235/255, green: 235/255, blue: 245/255, alpha: 0.3)])
+//        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.height))
+//        textField.leftView = paddingView
+//        textField.leftViewMode = .always
+//        return textField
+//    }()
+//
+//    //MARK: stackView textfield Email e Label Email
+//    lazy var stackViewEmail: UIStackView = {
+//        let stackView = UIStackView(arrangedSubviews: [labelEmail, textFieldEmail])
+//        stackView.translatesAutoresizingMaskIntoConstraints = false
+//        stackView.axis = .vertical
+//        stackView.spacing = 8
+//        return stackView
+//    }()
+    
+    //MARK: component email
+    lazy var componentEmail: TextfieldComponent = {
+        let view = TextfieldComponent()
+        view.textLabel = "Email"
+        view.placeHolderTextField = "abc@abc.com"
+        view.tag = 1
         
-        return label
-    }()
-    
-    
-    //MARK: textfield email
-    lazy var textFieldEmail: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = UIColor(red: 56/255.0, green: 56/255.0, blue: 58/255.0, alpha: 1.0)
-        textField.textColor = UIColor(red: 235/255.0,green: 235/255.0,blue: 245/255.0,alpha: 77/255.0)
-        textField.layer.cornerRadius = 8
-        textField.heightAnchor.constraint(equalToConstant: 46).isActive = true
-        textField.attributedPlaceholder = NSAttributedString(string: "abc@abc.com", attributes: [
-            .foregroundColor: UIColor(red: 235/255, green: 235/255, blue: 245/255, alpha: 0.3)])
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.height))
-        textField.leftView = paddingView
-        textField.leftViewMode = .always
-        return textField
+        return view
+        
     }()
 
-    //MARK: stackView textfield Email e Label Email
-    lazy var stackViewEmail: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [labelEmail, textFieldEmail])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 8
-        return stackView
-    }()
-
-    //MARK: Label password
-    lazy var labelPassword: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Password"
-        label.textAlignment = .left
-        label.textColor = .white
-        label.font = UIFont(name: "SFPro", size: 16)
+//    //MARK: Label password
+//    lazy var labelPassword: UILabel = {
+//        let label = UILabel()
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.text = "Password"
+//        label.textAlignment = .left
+//        label.textColor = .white
+//        label.font = UIFont(name: "SFPro", size: 16)
+//        
+//        
+//        return label
+//    }()
+//    
+//    //MARK: textfield password
+//    lazy var textFieldPassword: UITextField = {
+//        let textField = UITextField()
+//        textField.translatesAutoresizingMaskIntoConstraints = false
+//        textField.backgroundColor = UIColor(red: 56/255.0, green: 56/255.0, blue: 58/255.0, alpha: 1.0)
+//        textField.textColor = UIColor(red: 235/255.0,green: 235/255.0,blue: 245/255.0,alpha: 77/255.0)
+//        textField.layer.cornerRadius = 8
+//        textField.heightAnchor.constraint(equalToConstant: 46).isActive = true
+//        textField.attributedPlaceholder = NSAttributedString(string: "********", attributes: [
+//            .foregroundColor: UIColor(red: 235/255, green: 235/255, blue: 245/255, alpha: 0.3)])
+//        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.height))
+//        textField.leftView = paddingView
+//        textField.leftViewMode = .always
+//        return textField
+//    }()
+//    
+//    //MARK: stackView textfield password e Label password
+//    lazy var stackViewPassword: UIStackView = {
+//        let stackView = UIStackView(arrangedSubviews: [labelPassword, textFieldPassword])
+//        stackView.translatesAutoresizingMaskIntoConstraints = false
+//        stackView.axis = .vertical
+//        stackView.spacing = 8
+//        return stackView
+//    }()
+    
+    //MARK: component Password
+    lazy var componentPassword: TextfieldComponent = {
+        let view = TextfieldComponent()
+        view.textLabel = "Password"
+        view.placeHolderTextField = "********"
+        view.tag = 2
         
-        
-        return label
+        return view
     }()
     
-    //MARK: textfield password
-    lazy var textFieldPassword: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = UIColor(red: 56/255.0, green: 56/255.0, blue: 58/255.0, alpha: 1.0)
-        textField.textColor = UIColor(red: 235/255.0,green: 235/255.0,blue: 245/255.0,alpha: 77/255.0)
-        textField.layer.cornerRadius = 8
-        textField.heightAnchor.constraint(equalToConstant: 46).isActive = true
-        textField.attributedPlaceholder = NSAttributedString(string: "********", attributes: [
-            .foregroundColor: UIColor(red: 235/255, green: 235/255, blue: 245/255, alpha: 0.3)])
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.height))
-        textField.leftView = paddingView
-        textField.leftViewMode = .always
-        return textField
-    }()
-    
-    //MARK: stackView textfield password e Label password
-    lazy var stackViewPassword: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [labelPassword, textFieldPassword])
+    //MARK: stack view password e email
+    lazy var stackViewLoginPassword: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [componentEmail, componentPassword])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 8
+        stackView.spacing = 20
         return stackView
     }()
     
@@ -177,6 +207,7 @@ class ViewControllerLogin: UIViewController {
         return button
     }()
     
+    //MARK: button create account
     lazy var buttonCraeteAccount: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -190,6 +221,7 @@ class ViewControllerLogin: UIViewController {
         return button
     }()
     
+    //MARK: stack view buttons to login
     lazy var stackViewButtonsToLogin: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [buttonLogin, buttonCraeteAccount])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -254,22 +286,28 @@ class ViewControllerLogin: UIViewController {
             labelLogin.trailingAnchor.constraint(equalTo: viewInputs.trailingAnchor, constant: -16),
             labelLogin.centerXAnchor.constraint(equalTo: viewInputs.centerXAnchor),
             
-            //MARK: stack view email
-            stackViewEmail.topAnchor.constraint(equalTo: labelLogin.bottomAnchor, constant: 32),
-            stackViewEmail.centerXAnchor.constraint(equalTo: viewInputs.centerXAnchor),
-            stackViewEmail.trailingAnchor.constraint(equalTo: viewInputs.trailingAnchor, constant: -16),
-            stackViewEmail.leadingAnchor.constraint(equalTo: viewInputs.leadingAnchor, constant: 16),
+//            //MARK: stack view email
+//            stackViewEmail.topAnchor.constraint(equalTo: labelLogin.bottomAnchor, constant: 32),
+//            stackViewEmail.centerXAnchor.constraint(equalTo: viewInputs.centerXAnchor),
+//            stackViewEmail.trailingAnchor.constraint(equalTo: viewInputs.trailingAnchor, constant: -16),
+//            stackViewEmail.leadingAnchor.constraint(equalTo: viewInputs.leadingAnchor, constant: 16),
+//            
+//            //MARK: stack view password
+//            stackViewPassword.topAnchor.constraint(equalTo: stackViewEmail.bottomAnchor, constant: 20),
+//            stackViewPassword.centerXAnchor.constraint(equalTo: viewInputs.centerXAnchor),
+//            stackViewPassword.trailingAnchor.constraint(equalTo: viewInputs.trailingAnchor, constant: -16),
+//            stackViewPassword.leadingAnchor.constraint(equalTo: viewInputs.leadingAnchor, constant: 16),
             
-            //MARK: stack view password
-            stackViewPassword.topAnchor.constraint(equalTo: stackViewEmail.bottomAnchor, constant: 20),
-            stackViewPassword.centerXAnchor.constraint(equalTo: viewInputs.centerXAnchor),
-            stackViewPassword.trailingAnchor.constraint(equalTo: viewInputs.trailingAnchor, constant: -16),
-            stackViewPassword.leadingAnchor.constraint(equalTo: viewInputs.leadingAnchor, constant: 16),
+            //MARK: stack view email password
+            stackViewLoginPassword.topAnchor.constraint(equalTo: labelLogin.bottomAnchor, constant: 32),
+            stackViewLoginPassword.leadingAnchor.constraint(equalTo: viewInputs.leadingAnchor, constant:16),
+            stackViewLoginPassword.trailingAnchor.constraint(equalTo: viewInputs.trailingAnchor, constant:-16),
             
-            //MARK: forgot Pasdword button
+            
+            //MARK: forgot Password button
             buttonForgotPassword.trailingAnchor.constraint(equalTo: viewInputs.trailingAnchor, constant: -16),
             buttonForgotPassword.leadingAnchor.constraint(equalTo: viewInputs.leadingAnchor, constant: 218),
-            buttonForgotPassword.topAnchor.constraint(equalTo: stackViewPassword.bottomAnchor, constant: 16),
+            buttonForgotPassword.topAnchor.constraint(equalTo: componentPassword.bottomAnchor, constant: 16),
             
             //MARK: Button login
             buttonLogin.leadingAnchor.constraint(equalTo: viewInputs.leadingAnchor, constant: 16),
@@ -297,8 +335,11 @@ class ViewControllerLogin: UIViewController {
         
         viewInputs.addSubview(buttonForgotPassword)
         viewInputs.addSubview(labelLogin)
-        viewInputs.addSubview(stackViewEmail)
-        viewInputs.addSubview(stackViewPassword)
+//        viewInputs.addSubview(stackViewEmail)
+//        viewInputs.addSubview(stackViewPassword)
+//        viewInputs.addSubview(componentEmail)
+//        viewInputs.addSubview(componentPassword)
+        viewInputs.addSubview(stackViewLoginPassword)
         viewInputs.addSubview(stackViewButtonsToLogin)
    
     }
